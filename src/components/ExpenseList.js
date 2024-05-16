@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppContext"
 import ExpenseItem from "./ExpenseItem";
 
 const ExpenseList = () => {
-    const {expenses} = useContext(AppContext);
+    const {expenses, currency} = useContext(AppContext);
 
     return (
         <table className="table">
@@ -17,7 +17,7 @@ const ExpenseList = () => {
             </thead>
             <tbody>
                 {expenses.map((expense) => {
-                    return <ExpenseItem id={expense.id} key={expense.id} name={expense.name} cost={expense.cost} />
+                    return <ExpenseItem id={expense.id} key={expense.id} name={expense.name} cost={expense.cost} currency={currency} />
                 })}
             </tbody>
         </table>
